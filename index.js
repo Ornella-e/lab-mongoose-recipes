@@ -20,9 +20,19 @@ mongoose
   //const createdModel=  Recipe.create (Recipe);
    // console.log({title: String})
   //  mongoose.connection.close();
-  Recipe.insertMany(data, function(error, docs){});
+ // Recipe.insertMany(data, function(error, docs){});
+  //console.log (data);
+  const query = {duration: 220};
+  Recipe.findOneAndUpdate (query, {duration: 100});
+  Recipe.findOneAndUpdate (query, {$set: {duration: 100}})
   console.log (data);
+ // const deleted = Character.deleteOne( {
+   // title: 'Carrot Cake'
+ // });
+ // console.log (deleted);
+  mongoose.connection.close();
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
+  
