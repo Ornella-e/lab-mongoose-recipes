@@ -19,17 +19,19 @@ mongoose
     // Run your code here, after you have insured that the connection was made
   //const createdModel=  Recipe.create (Recipe);
    // console.log({title: String})
-  //  mongoose.connection.close();
+
  // Recipe.insertMany(data, function(error, docs){});
   //console.log (data);
-  const query = {duration: 220};
+
+
+  const query = [{duration: 220}];
   Recipe.findOneAndUpdate (query, {duration: 100});
   Recipe.findOneAndUpdate (query, {$set: {duration: 100}})
   console.log (data);
- // const deleted = Character.deleteOne( {
-   // title: 'Carrot Cake'
- // });
- // console.log (deleted);
+ const deleted = Recipe.deleteOne( {
+  title: 'Carrot Cake'
+  });
+  console.log (deleted);
   mongoose.connection.close();
   })
   .catch(error => {
